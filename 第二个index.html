@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>今天吃什么？</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: linear-gradient(to bottom, #fff7f0, #ffeef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      width: 360px;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #ff7aa2;
+      font-size: 28px;
+    }
+
+    p.tip {
+      color: #888;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ffd6e0;
+      border-radius: 14px;
+      outline: none;
+      background: #fffafc;
+      margin-bottom: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      border: none;
+      border-radius: 14px;
+      background: #ff9eb5;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.02);
+      background: #ff88a5;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #fff6fa;
+      color: #555;
+      min-height: 50px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>今天吃什么？ 🍴</h2>
+    <p class="tip">选一个你现在的口味，我来帮你想想～</p>
+
+    <select id="taste">
+      <option value="spicy">想吃辣的 🌶️</option>
+      <option value="sweet">想吃甜的 🍰</option>
+      <option value="light">想吃清淡的 🥗</option>
+      <option value="savory">想吃香香的 🍛</option>
+    </select>
+
+    <button onclick="go()">帮我推荐</button>
+
+    <div id="result">你的美食推荐会出现在这里 ✨</div>
+  </div>
+
+  <script>
+    function go() {
+      let taste = document.getElementById("taste").value;
+      let result = document.getElementById("result");
+
+      if (taste === "spicy") {
+        result.innerText = "推荐你吃：麻辣烫 🍜\n热热辣辣，吃完心情都会变好！";
+      } else if (taste === "sweet") {
+        result.innerText = "推荐你吃：小蛋糕 + 奶茶 🍰\n适合想要一点幸福感的时候～";
+      } else if (taste === "light") {
+        result.innerText = "推荐你吃：鸡肉沙拉 🥗\n清爽没有负担，今天就温柔一点。";
+      } else {
+        result.innerText = "推荐你吃：咖喱饭 🍛\n香香浓浓，很适合奖励自己一下！";
+      }
+    }
+  </script>
+
+</body>
+</html>
